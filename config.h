@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx       = 4;   /* border pixel of windows */
+static const unsigned int borderpx       = 2;   /* border pixel of windows */
 static const unsigned int snap           = 32;  /* snap pixel */
 static const unsigned int gappih         = 20;  /* horiz inner gap between windows */
 static const unsigned int gappiv         = 10;  /* vert inner gap between windows */
@@ -15,7 +15,7 @@ static const char localshare[]           = ".local/share";
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
 static const int bar_height              = 28;   /* 0 means derive from font, >= 1 explicit height */
-static const int vertpad                 = 5;  /* vertical padding of bar */
+static const int vertpad                 = 10;  /* vertical padding of bar */
 static const int sidepad                 = 10;  /* horizontal padding of bar */
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index), 'A' (active monitor) */
 static const int statusmon               = 'A';
@@ -36,7 +36,7 @@ static char normbordercolor[]            = "#a9b665";
 static char normfloatcolor[]             = "#d3869b";
 
 static char selfgcolor[]                 = "#d4be98";
-static char selbgcolor[]                 = "#665c54";
+static char selbgcolor[]                 = "#1d2021";
 static char selbordercolor[]             = "#89b482";
 static char selfloatcolor[]              = "#ea6962";
 
@@ -70,39 +70,39 @@ static char urgbgcolor[]                 = "#1d2021";
 static char urgbordercolor[]             = "#ea6962";
 static char urgfloatcolor[]              = "#d3869b";
 
-static char normTTBbgcolor[]             = "#ea6962";
-static char normLTRbgcolor[]             = "#d4be98";
-static char normMONObgcolor[]            = "#d3869b";
-static char normGRIDbgcolor[]            = "#89b482";
-static char normGRD1bgcolor[]            = "#ea6962";
-static char normGRD2bgcolor[]            = "#d4be98";
-static char normGRDMbgcolor[]            = "#d3869b";
-static char normHGRDbgcolor[]            = "#89b482";
-static char normDWDLbgcolor[]            = "#a9b665";
-static char normSPRLbgcolor[]            = "#a9b665";
-static char normfloatbgcolor[]           = "#ea6962";
-static char actTTBbgcolor[]              = "#d4be98";
-static char actLTRbgcolor[]              = "#d3869b";
-static char actMONObgcolor[]             = "#89b482";
-static char actGRIDbgcolor[]             = "#ea6962";
-static char actGRD1bgcolor[]             = "#d4be98";
-static char actGRD2bgcolor[]             = "#d3869b";
-static char actGRDMbgcolor[]             = "#89b482";
-static char actHGRDbgcolor[]             = "#ea6962";
-static char actDWDLbgcolor[]             = "#d4be98";
-static char actSPRLbgcolor[]             = "#d3869b";
-static char actfloatbgcolor[]            = "#89b482";
-static char selTTBbgcolor[]              = "#a9b665";
-static char selLTRbgcolor[]              = "#a9b665";
-static char selMONObgcolor[]             = "#ea6962";
-static char selGRIDbgcolor[]             = "#d4be98";
-static char selGRD1bgcolor[]             = "#d3869b";
-static char selGRD2bgcolor[]             = "#89b482";
-static char selGRDMbgcolor[]             = "#a9b665";
-static char selHGRDbgcolor[]             = "#ea6962";
-static char selDWDLbgcolor[]             = "#d4be98";
-static char selSPRLbgcolor[]             = "#d3869b";
-static char selfloatbgcolor[]            = "#89b482";
+static char normTTBbgcolor[]             = "#1d2021";
+static char normLTRbgcolor[]             = "#1d2021";
+static char normMONObgcolor[]            = "#1d2021";
+static char normGRIDbgcolor[]            = "#1d2021";
+static char normGRD1bgcolor[]            = "#1d2021";
+static char normGRD2bgcolor[]            = "#1d2021";
+static char normGRDMbgcolor[]            = "#1d2021";
+static char normHGRDbgcolor[]            = "#1d2021";
+static char normDWDLbgcolor[]            = "#1d2021";
+static char normSPRLbgcolor[]            = "#1d2021";
+static char normfloatbgcolor[]           = "#1d2021";
+static char actTTBbgcolor[]              = "#1d2021";
+static char actLTRbgcolor[]              = "#1d2021";
+static char actMONObgcolor[]             = "#1d2021";
+static char actGRIDbgcolor[]             = "#1d2021";
+static char actGRD1bgcolor[]             = "#1d2021";
+static char actGRD2bgcolor[]             = "#1d2021";
+static char actGRDMbgcolor[]             = "#1d2021";
+static char actHGRDbgcolor[]             = "#1d2021";
+static char actDWDLbgcolor[]             = "#1d2021";
+static char actSPRLbgcolor[]             = "#1d2021";
+static char actfloatbgcolor[]            = "#1d2021";
+static char selTTBbgcolor[]              = "#1d2021";
+static char selLTRbgcolor[]              = "#1d2021";
+static char selMONObgcolor[]             = "#1d2021";
+static char selGRIDbgcolor[]             = "#1d2021";
+static char selGRD1bgcolor[]             = "#1d2021";
+static char selGRD2bgcolor[]             = "#1d2021";
+static char selGRDMbgcolor[]             = "#1d2021";
+static char selHGRDbgcolor[]             = "#1d2021";
+static char selDWDLbgcolor[]             = "#1d2021";
+static char selSPRLbgcolor[]             = "#1d2021";
+static char selfloatbgcolor[]            = "#1d2021";
 
 
 static char *colors[][ColCount] = {
@@ -194,7 +194,8 @@ static Sp scratchpads[] = {
  * them. This works seamlessly with alternative tags and alttagsdecoration patches.
  */
 static char *tagicons[][NUMTAGS] = {
-	[DEFAULT_TAGS]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+        [DEFAULT_TAGS]        = {"1", "2", "3", "4", "5", "6", "7", "8", "9"},
+//	[DEFAULT_TAGS]        = { " ", " ", " ", " ", " ", " "," ", " "," "},
 	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
 	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
 };
@@ -229,7 +230,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.class = "Gimp", .tags = 1 << 4)
+	RULE(.class = "lxappearance", .isfloating = 1)
 //	RULE(.class = "Firefox", .tags = 1 << 7)
 	RULE(.instance = "spterm", .tags = SPTAG(0), .isfloating = 1)
 };
@@ -444,6 +445,4 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,              Button3,        toggletag,      {0} },
 };
-
-
 
